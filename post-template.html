@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!--
+  ============================================================
+  HOW TO USE THIS TEMPLATE
+  ============================================================
+  1. Copy this file and rename it, e.g. "my-new-post.html"
+     Use lowercase letters and hyphens, no spaces.
+     Good: "kalman-filter-explained.html"
+
+  2. Fill in the fields marked with  ✏️  below.
+
+  3. Write your content inside the <article> tag
+     using simple HTML (see examples in the WRITING GUIDE below).
+
+  4. Upload the new file to your GitHub repo folder.
+
+  5. Open index.html, find the blog section, and add a new
+     .blog-item entry pointing to your new file.
+  ============================================================
+  -->
+
+  <!-- ✏️ Change this to your post title -->
+  <title>Your Post Title — Nho-Duc Tran</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #faf9f6;
+      --bg2: #f3f1ec;
+      --surface: #ffffff;
+      --border: #e8e4dc;
+      --border2: #d4cfc4;
+      --text: #1a1916;
+      --muted: #7a7569;
+      --faint: #b5b0a5;
+      --accent: #2d6a4f;
+      --accent-light: #e8f4ee;
+      --accent2: #8b5e3c;
+      --accent2-light: #f5ede5;
+      --heading: 'Lora', Georgia, serif;
+      --body: 'Plus Jakarta Sans', sans-serif;
+      --mono: 'JetBrains Mono', monospace;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--body);
+      font-size: 16px;
+      line-height: 1.75;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.2rem 3rem;
+      background: rgba(250,249,246,0.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo {
+      font-family: var(--heading); font-weight: 600; font-size: 1rem;
+      color: var(--accent); text-decoration: none;
+    }
+    .nav-back {
+      font-size: 0.82rem; font-weight: 500; color: var(--muted);
+      text-decoration: none; display: flex; align-items: center; gap: 0.4rem;
+      transition: color 0.2s;
+    }
+    .nav-back:hover { color: var(--accent); }
+
+    /* POST LAYOUT */
+    .post-wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 8rem 2rem 6rem;
+    }
+
+    /* POST HEADER */
+    .post-tag {
+      display: inline-block;
+      font-family: var(--mono); font-size: 0.68rem; font-weight: 500;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      padding: 0.22rem 0.6rem; border-radius: 3px;
+      background: var(--accent2-light); color: var(--accent2);
+      border: 1px solid rgba(139,94,60,0.2);
+      margin-bottom: 1.2rem;
+    }
+    .post-title {
+      font-family: var(--heading);
+      font-size: clamp(1.9rem, 4vw, 3rem);
+      font-weight: 500; line-height: 1.15;
+      letter-spacing: -0.025em;
+      color: var(--text);
+      margin-bottom: 1rem;
+    }
+    .post-meta {
+      display: flex; align-items: center; gap: 1.2rem;
+      font-family: var(--mono); font-size: 0.75rem; color: var(--faint);
+      margin-bottom: 2.5rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .post-meta span::before { content: '·'; margin-right: 1.2rem; }
+    .post-meta span:first-child::before { display: none; }
+
+    /* ============================================================
+       WRITING GUIDE — HOW TO FORMAT YOUR CONTENT
+       ============================================================
+
+       PARAGRAPH:
+         <p>Your text here.</p>
+
+       HEADING (section title inside post):
+         <h2>Section Title</h2>
+         <h3>Subsection Title</h3>
+
+       BOLD / ITALIC:
+         <strong>bold text</strong>
+         <em>italic text</em>
+
+       LINK:
+         <a href="https://example.com" target="_blank">link text</a>
+
+       BULLET LIST:
+         <ul>
+           <li>First item</li>
+           <li>Second item</li>
+         </ul>
+
+       NUMBERED LIST:
+         <ol>
+           <li>Step one</li>
+           <li>Step two</li>
+         </ol>
+
+       BLOCKQUOTE (for key ideas):
+         <blockquote>The thing I learned most was...</blockquote>
+
+       CODE (inline, e.g. variable name):
+         <code>my_variable</code>
+
+       CODE BLOCK (multi-line):
+         <pre><code>
+         def my_function():
+             return 42
+         </code></pre>
+
+       IMAGE:
+         <figure>
+           <img src="your-image.png" alt="Description of image" />
+           <figcaption>Optional caption below the image.</figcaption>
+         </figure>
+
+       DIVIDER LINE:
+         <hr />
+
+    ============================================================ -->
+
+    /* POST CONTENT STYLES */
+    .post-content { color: var(--text); }
+
+    .post-content p {
+      margin-bottom: 1.5rem;
+      font-size: 1rem; line-height: 1.85;
+      color: var(--muted);
+    }
+    .post-content p strong { color: var(--text); font-weight: 600; }
+
+    .post-content h2 {
+      font-family: var(--heading);
+      font-size: 1.55rem; font-weight: 500;
+      color: var(--text); line-height: 1.2;
+      margin-top: 3rem; margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+    .post-content h3 {
+      font-family: var(--body);
+      font-size: 1.05rem; font-weight: 600;
+      color: var(--text);
+      margin-top: 2.2rem; margin-bottom: 0.7rem;
+    }
+
+    .post-content ul, .post-content ol {
+      padding-left: 1.5rem; margin-bottom: 1.5rem;
+      color: var(--muted);
+    }
+    .post-content li { margin-bottom: 0.45rem; font-size: 1rem; line-height: 1.8; }
+
+    .post-content blockquote {
+      border-left: 3px solid var(--accent);
+      padding: 0.8rem 1.3rem;
+      margin: 2rem 0;
+      background: var(--accent-light);
+      border-radius: 0 4px 4px 0;
+      font-family: var(--heading);
+      font-style: italic; font-size: 1.05rem;
+      color: var(--accent);
+    }
+
+    .post-content code {
+      font-family: var(--mono); font-size: 0.85rem;
+      background: var(--bg2); color: var(--accent2);
+      padding: 0.15rem 0.45rem; border-radius: 3px;
+      border: 1px solid var(--border);
+    }
+    .post-content pre {
+      background: #1a1916; border-radius: 6px;
+      padding: 1.5rem 1.8rem; overflow-x: auto;
+      margin: 1.8rem 0;
+    }
+    .post-content pre code {
+      background: none; border: none; color: #d4eddf;
+      font-size: 0.88rem; padding: 0;
+    }
+
+    .post-content figure {
+      margin: 2rem 0;
+    }
+    .post-content figure img {
+      width: 100%; border-radius: 6px;
+      border: 1px solid var(--border);
+    }
+    .post-content figcaption {
+      font-size: 0.8rem; color: var(--faint);
+      font-family: var(--mono); text-align: center;
+      margin-top: 0.6rem;
+    }
+
+    .post-content hr {
+      border: none; border-top: 1px solid var(--border);
+      margin: 2.5rem 0;
+    }
+
+    .post-content a {
+      color: var(--accent); text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .post-content a:hover { color: var(--accent2); }
+
+    /* POST FOOTER */
+    .post-footer {
+      margin-top: 4rem; padding-top: 2rem;
+      border-top: 1px solid var(--border);
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 1rem;
+    }
+    .back-link {
+      font-size: 0.82rem; font-weight: 500;
+      color: var(--muted); text-decoration: none;
+      display: flex; align-items: center; gap: 0.4rem;
+      transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--accent); }
+    .post-footer-meta {
+      font-family: var(--mono); font-size: 0.73rem; color: var(--faint);
+    }
+
+    @media (max-width: 640px) {
+      nav { padding: 1rem 1.5rem; }
+      .post-wrap { padding: 7rem 1.3rem 4rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">Nho-Duc Tran</a>
+    <a href="index.html#blog" class="nav-back">← Back to Blog</a>
+  </nav>
+
+  <main class="post-wrap">
+
+    <!-- POST HEADER — ✏️ Fill these in -->
+    <div class="post-tag">Research</div>  <!-- ✏️ Category: Teaching / Research / Life / Tutorial / Thoughts -->
+
+    <h1 class="post-title">
+      Your Post Title Goes Here  <!-- ✏️ Your title -->
+    </h1>
+
+    <div class="post-meta">
+      <span>March 2025</span>           <!-- ✏️ Date -->
+      <span>5 min read</span>           <!-- ✏️ Estimated reading time -->
+      <span>Nho-Duc Tran</span>
+    </div>
+
+    <!-- POST CONTENT — ✏️ Write everything below here -->
+    <article class="post-content">
+
+      <p>
+        Start writing your introduction here. This is the opening paragraph —
+        make it engaging so readers want to continue.
+      </p>
+
+      <h2>Your First Section</h2>
+
+      <p>
+        Write your content here. You can use <strong>bold</strong> for emphasis,
+        <em>italics</em> for titles or terms, and
+        <a href="https://example.com" target="_blank">links</a> for references.
+      </p>
+
+      <blockquote>
+        Use a blockquote to highlight a key insight or memorable takeaway.
+      </blockquote>
+
+      <h2>Another Section</h2>
+
+      <p>Keep writing. Add as many sections and paragraphs as you need.</p>
+
+      <ul>
+        <li>Use bullet lists for key points</li>
+        <li>Keep each item short and clear</li>
+        <li>Three to five items is usually ideal</li>
+      </ul>
+
+      <hr />
+
+      <p>
+        Close with a conclusion or reflection. What should the reader take away?
+        What will you explore next?
+      </p>
+
+    </article>
+    <!-- END OF CONTENT -->
+
+    <div class="post-footer">
+      <a href="index.html#blog" class="back-link">← All posts</a>
+      <div class="post-footer-meta">nhoduc.tran@miun.se</div>
+    </div>
+
+  </main>
+
+</body>
+</html>
